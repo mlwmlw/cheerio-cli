@@ -1,14 +1,27 @@
 #!/usr/bin/env node
 var cheerio = require('cheerio');
 var find = require('cheerio-eq');
+var program = require('commander');
 var html = '';
+program
+	.option('-o, --output [value]', 'output method', function(val) {
+		if(val != 'html' && val != 'text' && val != 'size')
+			return 'html';
+		else
+			return val;
+	})
+	.parse(process.argv);
+program.output = program.output || 'html';
 process.stdin.on('data', function(data) {
 	html += data.toString();
 });
 process.stdin.on('end', function() {
 	var $ = cheerio.load(html);
-	var $res = find($, process.argv.slice(2).join(' '));
+	var $res = find($, program.args.join(' '));
+	if(program.output == 'size') {
+		return console.log($res.length);
+	}
 	for(var i = 0; i < $res.length; i++) { 
-		console.log($res.eq(i).html());	
+		console.log($res.eq(i)[program.output]());
 	}
 });
