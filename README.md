@@ -5,13 +5,13 @@ cheerio in command line
 
 installation
 -----------
-    $ npm install
+    $ npm install cheerio-cli -g
     
 example 
 -----------
-    $ curl -s https://github.com/mlwmlw/cheerio-cli | ./bin/cheerio span[itemprop=title]
+    $ curl -s https://github.com/mlwmlw/cheerio-cli | cheerio span[itemprop=title]
     mlwmlw
-    $ curl -s https://github.com/mlwmlw/cheerio-cli/commits/master | ./bin/cheerio .commit:last-child a:eq(1)
+    $ curl -s https://github.com/mlwmlw/cheerio-cli/commits/master | cheerio .commit:last-child a:eq(1)
     07b0406
-		$ curl -s https://github.com/mlwmlw/cheerio-cli/commits/master | ./bin/cheerio .commit -o size
+		$ curl -s https://github.com/mlwmlw/cheerio-cli/commits/master | cheerio .commit -o size
 		6
