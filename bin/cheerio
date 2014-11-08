@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+var cheerio = require('cheerio');
+var find = require('cheerio-eq');
+var html = '';
+process.stdin.on('data', function(data) {
+	html += data.toString();
+});
+process.stdin.on('end', function() {
+	var $ = cheerio.load(html);
+	console.log(find($, process.argv.slice(2).join(' ')).html());	
+});

@@ -1,0 +1,19 @@
+{
+  "name": "cheerio-cli",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./bin/cheerio",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cheerio",
+    "cli"
+  ],
+  "author": "mlwmlw",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.18.0",
+    "cheerio-eq": "^1.0.0"
+  }
+}
