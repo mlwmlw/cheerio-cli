@@ -13,3 +13,5 @@ example
     mlwmlw
     $ curl -s https://github.com/mlwmlw/cheerio-cli/commits/master | ./bin/cheerio .commit:last-child a:eq(1)
     07b0406
+		$ curl -s https://github.com/mlwmlw/cheerio-cli/commits/master | ./bin/cheerio .commit -o size
+		6
