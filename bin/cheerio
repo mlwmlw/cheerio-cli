@@ -10,6 +10,8 @@ program
 		else
 			return val;
 	})
+	.option('-a --attr [value]','attr select')
+	.version(require('../package.json').version)
 	.parse(process.argv);
 program.output = program.output || 'html';
 process.stdin.on('data', function(data) {
@@ -19,9 +21,21 @@ process.stdin.on('end', function() {
 	var $ = cheerio.load(html);
 	var $res = find($, program.args.join(' '));
 	if(program.output == 'size') {
-		return console.log($res.length);
+		process.stdout.write($res.length.toString());
+		process.stdout.write('\n');
+	}else if(program.attr){
+		for(var i = 0; i < $res.length; i++) { 
+			process.stdout.write($res.eq(i)['attr'](program.attr).toString());
+			process.stdout.write('\n');
+		}
+	}else{
+		for(var i = 0; i < $res.length; i++) { 
+			process.stdout.write($res.eq(i)[program.output]().toString());
+			process.stdout.write('\n');
+		}	
 	}
-	for(var i = 0; i < $res.length; i++) { 
-		console.log($res.eq(i)[program.output]());
-	}
+	
+	
+	
+	
 });

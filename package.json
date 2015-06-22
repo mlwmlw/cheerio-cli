@@ -1,7 +1,7 @@
 {
   "name": "cheerio-cli",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.1.0",
+  "description": "cheerio command line module",
   "main": "bin/cheerio",
   "bin": {
     "cheerio": "./bin/cheerio"
@@ -13,11 +13,17 @@
     "cheerio",
     "cli"
   ],
+  "contributors": [
+    {
+      "name": "Ayhan Kuru",
+      "email": "ayhankuru@yandex.com.tr"
+    }
+  ],
   "author": "mlwmlw",
   "license": "MIT",
   "dependencies": {
-    "cheerio": "^0.18.0",
+    "cheerio": "^0.19.0",
     "cheerio-eq": "^1.0.0",
-    "commander": "^2.5.0"
+    "commander": "^2.8.1"
   }
 }
