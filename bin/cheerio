@@ -4,7 +4,7 @@ var find = require('cheerio-eq');
 var program = require('commander');
 var html = '';
 program
-	.option('-o, --output [value]', 'output method', function(val) {
+	.option('-o, --output [value]', 'output method {html, text, size}', function(val) {
 		if(val != 'html' && val != 'text' && val != 'size')
 			return 'html';
 		else
