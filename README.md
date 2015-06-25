@@ -27,7 +27,7 @@ Example
     github.com	
  
     piping ouput
-    $ curl -s https://github.com/mlwmlw/cheerio-cli | ./bin/cheerio #readme | cheerio h2
+    $ curl -s https://github.com/mlwmlw/cheerio-cli | cheerio #readme | cheerio h2
  
 [npm-image]: https://img.shields.io/npm/v/cheerio-cli.svg?style=flat
 [npm-url]: https://npmjs.org/package/cheerio-cli
