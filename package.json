@@ -1,6 +1,6 @@
 {
   "name": "cheerio-cli",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "cheerio command line module",
   "main": "bin/cheerio",
   "bin": {
