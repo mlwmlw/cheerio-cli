@@ -11,23 +11,23 @@ installation
 Example 
 -----------
     simple query 
-    $ curl -s https://github.com/mlwmlw/cheerio-cli | cheerio span[itemprop=title]
+    $ curl -s https://github.com/mlwmlw/cheerio-cli | cheerio -o text "span[itemprop=author]"
     mlwmlw
 
     first element
-    $ curl -s https://github.com/mlwmlw/cheerio-cli/commits/master | cheerio .commit:last-child a:eq(1)
+    $ curl -s https://github.com/mlwmlw/cheerio-cli/commits/master | cheerio "a.commit-tease-sha"
     07b0406
 
     output query elements size
-    $ curl -s https://github.com/mlwmlw/cheerio-cli/commits/master | cheerio .commit -o size
+    $ curl -s https://github.com/mlwmlw/cheerio-cli/commits/master | cheerio ".commit" -o size
     6
 
     query element attribute
-    $ curl -s https://github.com/mlwmlw/cheerio-cli/commits/master | cheerio meta[name=hostname] -a content
+    $ curl -s https://github.com/mlwmlw/cheerio-cli/commits/master | cheerio "meta[name=hostname]" -a content
     github.com	
  
     piping ouput
-    $ curl -s https://github.com/mlwmlw/cheerio-cli | cheerio #readme | cheerio h2
+    $ curl -s https://github.com/mlwmlw/cheerio-cli | cheerio "#readme" | cheerio "h2" -o text
  
 [npm-image]: https://img.shields.io/npm/v/cheerio-cli.svg?style=flat
 [npm-url]: https://npmjs.org/package/cheerio-cli
