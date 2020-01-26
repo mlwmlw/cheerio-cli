@@ -34,8 +34,13 @@ process.stdin.on('end', function() {
 			process.stdout.write('\n');
 		}	
 	}
-	
-	
-	
-	
+});
+process.stdout.on('error', function(err) {
+	if (err.code === 'EPIPE') {
+		// expected if output pipe closed, e.g. by `head`
+		process.exit(0);
+	} else {
+		process.stderr.write(JSON.stringify(err) + '\n');
+		process.exit(1);
+	}
 });
