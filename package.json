@@ -1,10 +1,11 @@
 {
   "name": "cheerio-cli",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "cheerio command line module",
   "main": "bin/cheerio",
   "bin": {
-    "cheerio": "./bin/cheerio"
+    "cheerio": "./bin/cheerio",
+    "cheerio-cli": "./bin/cheerio"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
